@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745501902028" clover="3.2.0">
-  <project timestamp="1745501902029" name="All files">
-    <metrics statements="375" coveredstatements="212" conditionals="38" coveredconditionals="29" methods="23" coveredmethods="13" elements="436" coveredelements="254" complexity="0" loc="375" ncloc="375" packages="5" files="10" classes="10"/>
+<coverage generated="1745510471108" clover="3.2.0">
+  <project timestamp="1745510471108" name="All files">
+    <metrics statements="385" coveredstatements="212" conditionals="40" coveredconditionals="30" methods="25" coveredmethods="14" elements="450" coveredelements="256" complexity="0" loc="385" ncloc="385" packages="6" files="12" classes="12"/>
     <package name="task-app">
       <metrics statements="79" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="backend.js" path="C:\Users\USER\task-app\backend.js">
@@ -130,7 +130,7 @@
       </file>
     </package>
     <package name="task-app.src.components">
-      <metrics statements="219" coveredstatements="208" conditionals="32" coveredconditionals="28" methods="13" coveredmethods="12"/>
+      <metrics statements="225" coveredstatements="208" conditionals="33" coveredconditionals="29" methods="14" coveredmethods="13"/>
       <file name="AddTaskForm.tsx" path="C:\Users\USER\task-app\src\components\AddTaskForm.tsx">
         <metrics statements="59" coveredstatements="59" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -259,6 +259,15 @@
         <line num="71" count="6" type="stmt"/>
         <line num="73" count="6" type="stmt"/>
         <line num="75" count="1" type="stmt"/>
+      </file>
+      <file name="PrivateRoute.tsx" path="C:\Users\USER\task-app\src\components\PrivateRoute.tsx">
+        <metrics statements="6" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
       </file>
       <file name="TaskList.tsx" path="C:\Users\USER\task-app\src\components\TaskList.tsx">
         <metrics statements="96" coveredstatements="88" conditionals="22" coveredconditionals="18" methods="9" coveredmethods="9"/>
@@ -420,6 +429,16 @@
         <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="task-app.src.utils">
+      <metrics statements="4" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="auth.ts" path="C:\Users\USER\task-app\src\utils\auth.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
       </file>
     </package>
   </project>
