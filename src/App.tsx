@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
+import Login from './components/Login';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTaskForm';
 import Dashboard from './pages/Dashboard';

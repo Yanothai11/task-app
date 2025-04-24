@@ -17,8 +17,8 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-
-    "types": ["cypress", "vitest/globals", "@testing-library/jest-dom"]    
+    "types": [], // ลบ types ออกก่อน
+    "typeRoots": ["./node_modules/@types", "./node_modules/@testing-library", "./node_modules/vitest"] // ลองเพิ่ม paths โดยตรง
   },
   "include": [
     "src",
