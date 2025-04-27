@@ -1,54 +1,95 @@
-# React + TypeScript + Vite
+# Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Features
+- User login and authentication (client-side mock)
+- Add, edit, and delete tasks
+- Form validation with Formik and Yup
+- Private routing for authenticated pages
+- In-memory backend server with Express
+- Fully unit tested components with 100% coverage
+- E2E tests simulating real user flows using Cypress
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Frontend**: React, Vite, TypeScript, TailwindCSS
+- **Backend**: Node.js, Express
+- **Form Handling**: Formik, Yup
+- **Testing**: Vitest, @testing-library/react, Cypress
+- **Styling**: TailwindCSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Setup Instructions
+1. Clone the Repository
+   ```bash
+   git clone https://github.com/Yanothai11/task-app.git
+   cd task-app
+   ```
 
-## Expanding the ESLint configuration
+2. Install Dependencies
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. Start the Backend Server (http://localhost:5001)
+   ```bash
+   node backend.js
+   ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+4. Start the Frontend (Vite Dev Server) (http://localhost:5173)
+   ```bash
+   npm run dev
+   ```
+
+5. Run Unit Tests with Vitest
+   ```bash
+   npx vitest --coverage
+   ```
+
+6. Open Cypress for E2E Testing
+   ```bash
+   npx cypress open
+   ```
+
+---
+
+## Key Architectural Decisions
+
+### Frontend
+Built using **React** with **Vite** and **TypeScript** for a fast and scalable development experience.
+
+### State Management
+Managed locally within components for simplicity, no Redux or Zustand used.
+
+### Backend
+Simple **Node.js** and **Express** server (`backend.js`) that handles in-memory task operations.
+
+### Form Validation
+Used **Formik** and **Yup** for robust form handling and validation.
+
+### Authentication
+Client-side authentication mock with `auth.ts` utilities and `PrivateRoute` component.
+
+### Testing
+- **Unit Testing**:  
+  Done with **Vitest** and **@testing-library/react**.
+- **E2E Testing**:  
+  Using **Cypress** to simulate real user flows.
+
+### Styling
+Using **Tailwind CSS** for fast and clean UI development.
+
+### Folder Structure
+```
+src/
+├── components/    # Reusable React components
+├── pages/         # Page-level components (e.g., Dashboard)
+├── services/      # API service functions (e.g., taskService.ts)
+├── utils/         # Utility functions (e.g., auth.ts)
+├── App.tsx        # App router setup
+└── main.tsx       # App entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Testing Coverage
+- Components (e.g., Login, TaskList, AddTaskForm) have **100% coverage**.
+- Services and utils have partial coverage.
+- E2E tests pass on critical user flows (login, task management).
