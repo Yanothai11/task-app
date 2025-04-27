@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+{/*import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTaskForm';
@@ -11,7 +11,7 @@ const App = () => {
     <Router>
       <Routes>
         {/*<Route path="/" element={<Navigate to="/login" />} /> */}
-      <Route path="/" element={<Navigate to="/tasks" />} />
+{/*}      <Route path="/" element={<Navigate to="/tasks" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/tasks" element={<TaskList />} /> 
         <Route path="/add-task" element={<AddTask />} /> 
@@ -21,7 +21,7 @@ const App = () => {
   );
 };
 
-export default App; 
+export default App; */}
 
 ///for run auth_redirect.cy
 {/*const App = () => {
@@ -55,4 +55,37 @@ export default App;
 
 export default App;*/}
 
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Login from './components/Login';
+import TaskList from './components/TaskList';
+import AddTask from './components/AddTaskForm';
+import Dashboard from './pages/Dashboard';
+import PrivateRoute from './components/PrivateRoute';
+
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        {/* Redirect from root to tasks page */}
+        <Route path="/" element={<Navigate to="/tasks" />} />
+        
+        {/* Login and other routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/tasks" element={<TaskList />} /> 
+        <Route path="/add-task" element={<AddTask />} /> 
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* PrivateRoute wrapping private content */}
+        <Route
+          path="/private"
+          element={<PrivateRoute element={<div>Private Content</div>} />}
+        />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
 

@@ -2,41 +2,20 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { useFormik } from 'formik';
 import { vi } from 'vitest';
 import { useNavigate } from 'react-router-dom';
 
-// Mock useNavigate hook
+import Login from './Login';
+
+// Mock useNavigate
 const mockNavigate = vi.fn();
 vi.mock('react-router-dom', () => ({
   useNavigate: () => mockNavigate,
 }));
 
-// Mock useFormik hook
-const mockFormik = {
-  values: { email: '', password: '' },
-  touched: { email: false, password: false },
-  errors: { email: '', password: '' },
-  handleChange: vi.fn(),
-  handleBlur: vi.fn(),
-  handleSubmit: vi.fn(),
-};
-vi.mock('formik', () => ({
-  useFormik: () => mockFormik,
-}));
-
-import Login from './Login';
-
-describe('Login Component', () => {
+describe('Login Component (Full Coverage)', () => {
   beforeEach(() => {
     mockNavigate.mockClear();
-    (mockFormik.handleChange as ReturnType<typeof vi.fn>).mockClear();
-    (mockFormik.handleBlur as ReturnType<typeof vi.fn>).mockClear();
-    (mockFormik.handleSubmit as ReturnType<typeof vi.fn>).mockClear();
-
-    mockFormik.values = { email: '', password: '' };
-    mockFormik.touched = { email: false, password: false };
-    mockFormik.errors = { email: '', password: '' };
   });
 
   it('renders the login form elements', () => {
@@ -47,69 +26,65 @@ describe('Login Component', () => {
     expect(screen.getByRole('button', { name: /Login/i })).toBeInTheDocument();
   });
 
-  it('calls handleSubmit on form submission', () => {
+  it('fills and submits form successfully', async () => {
     render(<Login />);
-    const submitButton = screen.getByRole('button', { name: /Login/i });
-    fireEvent.click(submitButton);
-    expect(mockFormik.handleSubmit).toHaveBeenCalledTimes(1);
-  });
 
-  it('navigates to /dashboard on successful submit', async () => {
-    (mockFormik.handleSubmit as ReturnType<typeof vi.fn>).mockImplementationOnce(() => {
-      mockNavigate('/dashboard');
-    });
+    const emailInput = screen.getByLabelText(/Email/i);
+    const passwordInput = screen.getByLabelText(/Password/i);
+    const loginButton = screen.getByRole('button', { name: /Login/i });
 
-    render(<Login />);
-    const submitButton = screen.getByRole('button', { name: /Login/i });
-    fireEvent.click(submitButton);
+    await userEvent.type(emailInput, 'test@example.com');
+    await userEvent.type(passwordInput, 'password123');
+    fireEvent.click(loginButton);
 
     await waitFor(() => {
       expect(mockNavigate).toHaveBeenCalledWith('/dashboard');
     });
   });
 
-  it('shows email validation error when touched and invalid', async () => {
-    mockFormik.touched.email = true;
-    mockFormik.errors.email = 'Invalid email address';
-
+  it('shows email validation error', async () => {
     render(<Login />);
+
     const emailInput = screen.getByLabelText(/Email/i);
     fireEvent.blur(emailInput);
 
     await waitFor(() => {
-      expect(screen.getByText((text) => text.includes('Invalid email address'))).toBeInTheDocument();
+      expect(screen.getByText(/Required/i)).toBeInTheDocument();
     });
   });
 
-  it('shows password validation error when touched and invalid', async () => {
-    mockFormik.touched.password = true;
-    mockFormik.errors.password = 'Password must be at least 6 characters';
-
+  it('shows password validation error', async () => {
     render(<Login />);
+
     const passwordInput = screen.getByLabelText(/Password/i);
     fireEvent.blur(passwordInput);
 
     await waitFor(() => {
-      expect(screen.getByText((text) => text.includes('Password must be at least 6 characters'))).toBeInTheDocument();
+      expect(screen.getByText(/Required/i)).toBeInTheDocument();
     });
   });
 
-  it('calls handleBlur on input fields', () => {
+  it('shows email format validation error', async () => {
     render(<Login />);
+
     const emailInput = screen.getByLabelText(/Email/i);
+    await userEvent.type(emailInput, 'invalidemail');
     fireEvent.blur(emailInput);
-    expect(mockFormik.handleBlur).toHaveBeenCalledWith(
-      expect.objectContaining({
-        target: expect.objectContaining({ name: 'email' }),
-      })
-    );
+
+    await waitFor(() => {
+      expect(screen.getByText(/Invalid email address/i)).toBeInTheDocument();
+    });
+  });
+
+  it('shows password length validation error', async () => {
+    render(<Login />);
 
     const passwordInput = screen.getByLabelText(/Password/i);
+    await userEvent.type(passwordInput, '123');
     fireEvent.blur(passwordInput);
-    expect(mockFormik.handleBlur).toHaveBeenCalledWith(
-      expect.objectContaining({
-        target: expect.objectContaining({ name: 'password' }),
-      })
-    );
+
+    await waitFor(() => {
+      expect(screen.getByText(/Password must be at least 6 characters/i)).toBeInTheDocument();
+    });
   });
 });

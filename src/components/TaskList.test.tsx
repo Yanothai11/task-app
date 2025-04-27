@@ -114,9 +114,9 @@ describe('TaskList', () => {
 
   it('should add a task when input is valid', async () => {
     (fetchTasks as unknown as jest.Mock)
-      .mockResolvedValueOnce([]) // Initial empty fetch
+      .mockResolvedValueOnce([]) // Initial fetch
       .mockResolvedValueOnce([
-        { id: 1, title: 'New Task', description: 'New Description' }, // After adding
+        { id: 1, title: 'New Task', description: 'New Description' },
       ]);
     (addTask as unknown as jest.Mock).mockResolvedValue({});
 
@@ -154,6 +154,79 @@ describe('TaskList', () => {
 
     await waitFor(() => {
       expect(addTask).not.toHaveBeenCalled();
+    });
+  });
+
+  // ✅ เพิ่มเทสต์จับ error ใน loadTasks
+  it('should handle fetchTasks error', async () => {
+    (fetchTasks as unknown as jest.Mock).mockRejectedValue(new Error('Fetch error'));
+    render(<TaskList />);
+    await waitFor(() => {
+      expect(screen.getByText(/ไม่พบงาน/i)).toBeInTheDocument();
+    });
+  });
+
+  // ✅ เพิ่มเทสต์จับ error ใน addTask
+  it('should handle addTask error', async () => {
+    (fetchTasks as unknown as jest.Mock).mockResolvedValue([]);
+    (addTask as unknown as jest.Mock).mockRejectedValue(new Error('Add error'));
+
+    render(<TaskList />);
+
+    fireEvent.change(screen.getByPlaceholderText('ชื่องาน'), {
+      target: { value: 'Test Task' },
+    });
+    fireEvent.change(screen.getByPlaceholderText('รายละเอียด'), {
+      target: { value: 'Test Description' },
+    });
+
+    fireEvent.click(screen.getByText('เพิ่ม'));
+
+    await waitFor(() => {
+      expect(addTask).toHaveBeenCalled();
+    });
+  });
+
+  // ✅ เพิ่มเทสต์จับ error ใน deleteTask
+  it('should handle deleteTask error', async () => {
+    (fetchTasks as unknown as jest.Mock).mockResolvedValue([
+      { id: 1, title: 'Task 1', description: 'Description 1' },
+    ]);
+    (deleteTask as unknown as jest.Mock).mockRejectedValue(new Error('Delete error'));
+
+    render(<TaskList />);
+    await screen.findByText('Task 1');
+
+    await act(async () => {
+      fireEvent.click(screen.getByText('ลบ'));
+    });
+
+    await waitFor(() => {
+      expect(deleteTask).toHaveBeenCalledWith(1);
+    });
+  });
+
+  // ✅ เพิ่มเทสต์จับ error ใน updateTask
+  it('should handle updateTask error', async () => {
+    (fetchTasks as unknown as jest.Mock).mockResolvedValue([
+      { id: 1, title: 'Task 1', description: 'Description 1' },
+    ]);
+    (updateTask as unknown as jest.Mock).mockRejectedValue(new Error('Update error'));
+
+    window.prompt = vi
+      .fn()
+      .mockReturnValueOnce('New Title')
+      .mockReturnValueOnce('New Description');
+
+    render(<TaskList />);
+    await screen.findByText('Task 1');
+
+    await act(async () => {
+      fireEvent.click(screen.getByText('แก้ไข'));
+    });
+
+    await waitFor(() => {
+      expect(updateTask).toHaveBeenCalledWith(1, 'New Title', 'New Description');
     });
   });
 });

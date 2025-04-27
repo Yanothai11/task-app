@@ -17,8 +17,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": [], // ลบ types ออกก่อน
-    "typeRoots": ["./node_modules/@types", "./node_modules/@testing-library", "./node_modules/vitest"] // ลองเพิ่ม paths โดยตรง
+    "types": ["vitest/globals", "node"]  // ✅ แก้ให้เหลือแค่ types แบบนี้พอ
   },
   "include": [
     "src",
