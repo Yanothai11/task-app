@@ -91,5 +91,7 @@ src/
 
 ## Testing Coverage
 - Components (e.g., Login, TaskList, AddTaskForm) have **100% coverage**.
+  ![Coverage Report](./coverage_report.png)
+
 - Services and utils have partial coverage.
 - E2E tests pass on critical user flows (login, task management).
