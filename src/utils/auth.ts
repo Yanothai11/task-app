@@ -12,7 +12,7 @@ export const setToken = (token: string): void => {
   };
   
   export const clearToken = (): void => {
-    localStorage.removeItem('token');  // เคลียร์ token ออกจาก localStorage
+    localStorage.removeItem('token');  
   };
   
   

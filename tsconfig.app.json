@@ -17,7 +17,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": ["vitest/globals", "node"]  // ✅ แก้ให้เหลือแค่ types แบบนี้พอ
+    "types": ["vitest/globals", "node"]  
   },
   "include": [
     "src",

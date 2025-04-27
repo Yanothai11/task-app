@@ -157,7 +157,7 @@ describe('TaskList', () => {
     });
   });
 
-  // ✅ เพิ่มเทสต์จับ error ใน loadTasks
+  // จับ error ใน loadTasks
   it('should handle fetchTasks error', async () => {
     (fetchTasks as unknown as jest.Mock).mockRejectedValue(new Error('Fetch error'));
     render(<TaskList />);
@@ -166,7 +166,7 @@ describe('TaskList', () => {
     });
   });
 
-  // ✅ เพิ่มเทสต์จับ error ใน addTask
+  // จับ error ใน addTask
   it('should handle addTask error', async () => {
     (fetchTasks as unknown as jest.Mock).mockResolvedValue([]);
     (addTask as unknown as jest.Mock).mockRejectedValue(new Error('Add error'));
@@ -187,7 +187,7 @@ describe('TaskList', () => {
     });
   });
 
-  // ✅ เพิ่มเทสต์จับ error ใน deleteTask
+  // จับ error ใน deleteTask
   it('should handle deleteTask error', async () => {
     (fetchTasks as unknown as jest.Mock).mockResolvedValue([
       { id: 1, title: 'Task 1', description: 'Description 1' },
@@ -206,7 +206,7 @@ describe('TaskList', () => {
     });
   });
 
-  // ✅ เพิ่มเทสต์จับ error ใน updateTask
+  // จับ error ใน updateTask
   it('should handle updateTask error', async () => {
     (fetchTasks as unknown as jest.Mock).mockResolvedValue([
       { id: 1, title: 'Task 1', description: 'Description 1' },

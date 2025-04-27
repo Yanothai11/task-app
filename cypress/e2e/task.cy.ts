@@ -87,7 +87,7 @@ describe('Tasks page (API CRUD tests)', () => {
   
       cy.intercept('GET', '/api/tasks', {
         statusCode: 200,
-        body: [initialTasks[1]], // เหลือแค่งานที่ 2
+        body: [initialTasks[1]], 
       }).as('getTasksAfterDelete');
   
       cy.contains('ทำงานบ้าน').parent().within(() => {

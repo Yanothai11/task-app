@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
-import { vi } from 'vitest';  // ใช้ vi จาก vitest
+import { vi } from 'vitest';  
 
 describe("PrivateRoute", () => {
   it("should render children when authenticated", () => {
     // Mock localStorage.getItem to return a token
-    Storage.prototype.getItem = vi.fn(() => 'mocked_token');  // ใช้ vi.fn()
+    Storage.prototype.getItem = vi.fn(() => 'mocked_token');  
 
     render(
       <MemoryRouter initialEntries={["/private"]}>
@@ -24,7 +24,7 @@ describe("PrivateRoute", () => {
 
   it("should redirect to login when not authenticated", () => {
     // Mock localStorage.getItem to return null (not authenticated)
-    Storage.prototype.getItem = vi.fn(() => null);  // ใช้ vi.fn()
+    Storage.prototype.getItem = vi.fn(() => null);  
 
     render(
       <MemoryRouter initialEntries={["/private"]}>

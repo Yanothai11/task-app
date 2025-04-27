@@ -12,13 +12,12 @@ let tasks = [
 app.use(express.json());
 app.use(cors());
 
-// เส้นทางนี้ใช้สำหรับดึงข้อมูลทั้งหมดของ tasks
+// ดึงข้อมูลทั้งหมดของ tasks
 app.get('/api/tasks', (req, res) => {
   res.json(tasks);
 });
 
-// เส้นทางนี้ใช้สำหรับดึงข้อมูลของ task ตาม id
-
+// ข้อมูลของ task ตาม id
 app.get('/api/tasks/:id', (req, res) => {
     const { id } = req.params;
     const task = tasks.find(task => task.id === parseInt(id));
@@ -30,7 +29,7 @@ app.get('/api/tasks/:id', (req, res) => {
     }
   });
 
-// เส้นทางสำหรับการสร้าง task ใหม่
+// สร้าง task ใหม่
 app.post('/api/tasks', (req, res) => {
   const newTask = req.body;
   newTask.id = tasks.length + 1;
@@ -38,7 +37,7 @@ app.post('/api/tasks', (req, res) => {
   res.status(201).json(newTask);
 });
 
-// เส้นทางสำหรับการอัปเดต task
+// อัปเดต task
 app.patch('/api/tasks/:id', (req, res) => {
   const { id } = req.params;
   const updatedTask = req.body;
@@ -50,7 +49,7 @@ app.patch('/api/tasks/:id', (req, res) => {
   res.json(updatedTask);
 });
 
-// เส้นทางสำหรับการลบ task
+// ลบ task
 app.delete('/api/tasks/:id', (req, res) => {
   const { id } = req.params;
   tasks = tasks.filter((task) => task.id !== parseInt(id));

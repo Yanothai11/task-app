@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745734283046" clover="3.2.0">
-  <project timestamp="1745734283047" name="All files">
-    <metrics statements="409" coveredstatements="233" conditionals="47" coveredconditionals="41" methods="26" coveredmethods="16" elements="482" coveredelements="290" complexity="0" loc="409" ncloc="409" packages="6" files="12" classes="12"/>
+<coverage generated="1745760035758" clover="3.2.0">
+  <project timestamp="1745760035759" name="All files">
+    <metrics statements="393" coveredstatements="229" conditionals="47" coveredconditionals="42" methods="26" coveredmethods="17" elements="466" coveredelements="288" complexity="0" loc="393" ncloc="393" packages="6" files="12" classes="12"/>
     <package name="task-app">
-      <metrics statements="79" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="78" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="backend.js" path="C:\Users\USER\task-app\backend.js">
-        <metrics statements="62" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="61" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -67,7 +67,6 @@
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
       </file>
       <file name="postcss.config.js" path="C:\Users\USER\task-app\postcss.config.js">
         <metrics statements="6" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -94,38 +93,27 @@
       </file>
     </package>
     <package name="task-app.src">
-      <metrics statements="38" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="27" coveredstatements="0" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
       <file name="App.tsx" path="C:\Users\USER\task-app\src\App.tsx">
-        <metrics statements="29" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+        <metrics statements="18" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
-        <line num="61" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="65" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="68" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
-        <line num="75" count="0" type="stmt"/>
-        <line num="76" count="0" type="stmt"/>
-        <line num="77" count="0" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
-        <line num="81" count="0" type="stmt"/>
-        <line num="82" count="0" type="stmt"/>
-        <line num="83" count="0" type="stmt"/>
-        <line num="84" count="0" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="86" count="0" type="stmt"/>
-        <line num="88" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
       </file>
       <file name="main.tsx" path="C:\Users\USER\task-app\src\main.tsx">
         <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -141,7 +129,7 @@
       </file>
     </package>
     <package name="task-app.src.components">
-      <metrics statements="229" coveredstatements="229" conditionals="40" coveredconditionals="40" methods="15" coveredmethods="15"/>
+      <metrics statements="225" coveredstatements="225" conditionals="40" coveredconditionals="40" methods="15" coveredmethods="15"/>
       <file name="AddTaskForm.tsx" path="C:\Users\USER\task-app\src\components\AddTaskForm.tsx">
         <metrics statements="59" coveredstatements="59" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -272,17 +260,13 @@
         <line num="75" count="1" type="stmt"/>
       </file>
       <file name="PrivateRoute.tsx" path="C:\Users\USER\task-app\src\components\PrivateRoute.tsx">
-        <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-        <line num="1" count="1" type="stmt"/>
+        <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="2" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="29" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="32" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="33" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
       </file>
       <file name="TaskList.tsx" path="C:\Users\USER\task-app\src\components\TaskList.tsx">
         <metrics statements="96" coveredstatements="96" conditionals="25" coveredconditionals="25" methods="9" coveredmethods="9"/>
