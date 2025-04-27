@@ -28,3 +28,4 @@ describe('Login Page', () => {
     cy.contains('Dashboard').should('exist')
   })
 })
+

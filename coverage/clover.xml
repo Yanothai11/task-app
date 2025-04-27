@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1745510471108" clover="3.2.0">
-  <project timestamp="1745510471108" name="All files">
-    <metrics statements="385" coveredstatements="212" conditionals="40" coveredconditionals="30" methods="25" coveredmethods="14" elements="450" coveredelements="256" complexity="0" loc="385" ncloc="385" packages="6" files="12" classes="12"/>
+<coverage generated="1745717881422" clover="3.2.0">
+  <project timestamp="1745717881422" name="All files">
+    <metrics statements="387" coveredstatements="212" conditionals="40" coveredconditionals="30" methods="25" coveredmethods="14" elements="452" coveredelements="256" complexity="0" loc="387" ncloc="387" packages="6" files="12" classes="12"/>
     <package name="task-app">
       <metrics statements="79" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <file name="backend.js" path="C:\Users\USER\task-app\backend.js">
@@ -94,27 +94,29 @@
       </file>
     </package>
     <package name="task-app.src">
-      <metrics statements="27" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="29" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="App.tsx" path="C:\Users\USER\task-app\src\App.tsx">
-        <metrics statements="18" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="20" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
       </file>
       <file name="main.tsx" path="C:\Users\USER\task-app\src\main.tsx">
         <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>

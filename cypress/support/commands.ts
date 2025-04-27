@@ -47,4 +47,4 @@ Cypress.Commands.add('login', () => {
       }
     }
   }
-  
+
